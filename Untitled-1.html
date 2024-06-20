@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Dessert Cafe</title>
+  <link rel="stylesheet" href="myweb.css">
+  <style>
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    nav {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav .logo {
+      display: flex;
+      align-items: center;
+    }
+    nav .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      margin: 0 10px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+    nav ul li a:hover {
+      background-color: #555;
+    }
+
+    /* Welcome Section Styles */
+    .welcome-section {
+      text-align: center;
+      padding: 50px;
+      background-color: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Full viewport height */
+    }
+    .welcome-box {
+      background-color: #ffffff; /* White background for the box */
+      border: 2px solid #e91e63; /* Border color to match the text */
+      padding: 20px 40px;
+      border-radius: 15px; /* Rounded corners */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+      max-width: 800px;
+      margin: 0 auto; /* Center align */
+    }
+    .welcome-box h1 {
+      font-size: 2.5em;
+      color: #e91e63; /* Color for the welcome text */
+      margin-bottom: 20px;
+    }
+    .welcome-box p {
+      font-size: 1.2em;
+      margin: 10px 0;
+      color: #333; /* Slightly darker text for readability */
+    }
+    .welcome-box .button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 20px;
+      background-color: #e91e63;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .welcome-box .button:hover {
+      background-color: #c2185b;
+    }
+
+    /* Menu Section Styles */
+    .menu-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+      background-color: #f2f2f2;
+    }
+    .menu-item {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      margin: 10px;
+      padding: 20px;
+      text-align: center;
+      width: 300px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .menu-item img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .menu-item h3 {
+      color: #e91e63;
+      margin-bottom: 10px;
+    }
+    .menu-item p {
+      font-size: 1em;
+      margin: 10px 0;
+      color: #666;
+    }
+    .menu-item .price {
+      font-size: 1.2em;
+      color: #000;
+      margin-top: 10px;
+    }
+    .menu-item button {
+      background-color: #e91e63;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .menu-item button:hover {
+      background-color: #c2185b;
+    }
+
+    /* Gallery Section Styles */
+    .gallery-section {
+      padding: 50px;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+    .gallery-section h2 {
+      color: #e91e63;
+      margin-bottom: 30px;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .gallery img {
+      margin: 10px;
+      max-width: 300px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    /* Reviews Section Styles */
+    .reviews-section {
+      padding: 50px;
+      background-color: #fff;
+      text-align: center;
+    }
+    .reviews-section h2 {
+      color: #e91e63;
+      margin-bottom: 20px;
+    }
+    .testimonial {
+      margin-bottom: 20px;
+    }
+    .testimonial p {
+      font-size: 1.1em;
+      color: #555;
+    }
+    .testimonial .author {
+      font-weight: bold;
+      color: #e91e63;
+      margin-top: 5px;
+    }
+
+    /* Newsletter Section Styles */
+    .newsletter-section {
+      background-color: #f2f2f2;
+      padding: 50px;
+      text-align: center;
+    }
+    .newsletter-section h2 {
+      color: #e91e63;
+      margin-bottom: 20px;
+    }
+    .newsletter-section p {
+      font-size: 1.1em;
+      color: #555;
+    }
+    .newsletter-section form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+    .newsletter-section label {
+      font-size: 1.2em;
+      color: #333;
+      margin-right: 10px;
+    }
+    .newsletter-section input[type="email"] {
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      width: 250px;
+      max-width: 100%;
+    }
+    .newsletter-section button {
+      background-color: #e91e63;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .newsletter-section button:hover {
+      background-color: #c2185b;
+    }
+
+    /* Order Online Section Styles */
+    .order-online-section {
+      padding: 50px;
+      background-color: #fff;
+      text-align: center;
+    }
+    .order-online-section h2 {
+      color: #e91e63;
+      margin-bottom: 20px;
+    }
+    .order-online-section p {
+      font-size: 1.1em;
+      color: #555;
+    }
+
+    /* Contact Section Styles */
+    .contact-section {
+      background-color: #f2f2f2;
+      padding: 50px 0;
+      text-align: center;
+    }
+    .contact-section h2 {
+      color: #e91e63;
+      margin-bottom: 20px;
+    }
+    .contact-section p {
+      font-size: 1.1em;
+      color: #555;
+      margin: 5px 0;
+    }
+
+    /* Search Form Styles */
+    .search-form {
+      margin-top: 10px;
+      margin-right: 20px;
+      display: flex;
+      align-items: center;
+    }
+    .search-form input[type="text"] {
+      padding: 10px;
+      margin-right: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 200px;
+    }
+    .search-form button {
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .search-form button:hover {
+      background-color: #c2185b;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">
+      <img src="imgg/logo.png" alt="Dessert Cafe">
+      <span>DESSERT CAFE</span>
+    </div>
+    <!-- Search Form -->
+    <form class="search-form" action="#" method="get">
+      <input type="text" placeholder="Search..." name="search">
+      <button type="submit">Search</button>
+    </form>
+    <!-- Navigation Links -->
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#welcome">Welcome</a></li>
+      <li><a href="#menu">Menu</

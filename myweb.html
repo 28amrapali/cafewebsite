@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Dessert Cafe</title>
+  <link rel="stylesheet" href="myweb.css">
+</head>
+<body>
+  
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">
+      <img src="imgg/logo.png" alt="Dessert Cafe">
+      <span>DESSERT CAFE</span>
+    </div>
+    <form class="search-form" action="#" method="get">
+      <input type="text" placeholder="Search..." name="search">
+      <button type="submit">Search</button>
+    </form>
+
+    
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#welcome">Welcome</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#newsletter">Newsletter</a></li>
+      <li><a href="#order-online">Order Online</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li id="cart-icon"><a href="#" onclick="toggleCart()">Cart</a></li>
+    </ul>
+  </nav>
+
+  <!-- Welcome Section -->
+  <section id="welcome" class="welcome-section">
+    <h1>Welcome to Our Dessert Cafe</h1>
+    <p>We are delighted to have you here at our Dessert Cafe, where we offer a delightful array of sweet treats and desserts crafted with love and passion.</p>
+    <p>Our cafe is a haven for dessert lovers, where you can enjoy a cozy atmosphere and indulge in delicious pastries, cakes, and more. Whether you're here for a quick bite or a leisurely afternoon, we have something special for you.</p>
+    <p>Take a look at our menu, explore our gallery of mouth-watering desserts, and don't forget to check out our special promotions and events.</p>
+    <p>We look forward to serving you!</p>
+    <a href="#menu" class="button">Explore Our Menu</a>
+  </section>
+
+  <!-- Grid Layout for Food Images, Descriptions, and Order Form -->
+  <section id="menu" class="menu-section">
+    <div class="menu-item">
+      <img src="imgg/pastry.jpg" alt="Pastry">
+      <h3>Pastry</h3>
+      <p>Pastry is baked food made with a dough of flour, water and shortening (solid fats, including butter or lard) that may be savoury or sweetened.</p>
+      <button onclick="showOrderForm('pastry')">Order Now</button>
+      <p class="price">$5.99</p>
+    </div>
+
+    <div class="menu-item">
+      <img src="imgg/donuts.jpg" alt="Donuts">
+      <h3>Donut</h3>
+      <p>A doughnut or donut (/ˈdoʊnət/) is a type of food made from leavened fried dough.It is popular in many country.</p>
+      <button onclick="showOrderForm('Donuts')">Order Now</button>
+      <p class="price">$8.00</p>
+    </div>
+    <div class="menu-item">
+      <img src="imgg/icecream.jpg" alt="Ice-cream">
+      <h3>Ice-cream</h3>
+      <p>Ice creams are the perfect treats that are loved and relished by the kids, adults and elderly alike. Ice cream is also proven to be an effective stress booster.</p>
+      <button onclick="showOrderForm('Ice-cream')">Order Now</button>
+      <p class="price">$7.00</p>
+    </div>
+    <div class="menu-item">
+      <img src="imgg/shake.jpg" alt="Strawberry-shake">
+      <h3>Strawberry-shake</h3>
+      <p>A milkshake is a sweet beverage made by blending milk, ice cream, and flavorings or sweeteners</p>
+      <button onclick="showOrderForm('Strawberry-shake')">Order Now</button>
+      <p class="price">$5.78</p>
+    </div>
+
+    <div class="menu-item">
+      <img src="imgg/cupckae.jpg" alt="cupcake">
+      <h3>cupcake</h3>
+      <p>A cupcake, fairy cake, or bun is a small cake designed to serve one person, which may be baked in a small thin paper or aluminum cup.</p>
+      <button onclick="showOrderForm('cupcake')">Order Now</button>
+      <p class="price">$4.00</p>
+    </div>
+
+    <div class="menu-item">
+      <img src="imgg/pudding.jpg" alt="pudding">
+      <h3>pudding</h3>
+      <p>Pudding is a type of food. It can be either a dessert or a savoury dish served as part of the main meal..</p>
+      <button onclick="showOrderForm('Pudding')">Order Now</button>
+      <p class="price">$9.24</p>
+    </div>
+
+    <div class="menu-item">
+      <img src="imgg/pancake.jpg" alt="pudding">
+      <h3>pancake</h3>
+      <p>A pancake is a flat cake, often thin and round, prepared from a starch-based batter that may contain eggs, milk and butter</p>
+      <button onclick="showOrderForm('Pancake')">Order Now</button>
+      <p class="price">$9.24</p>
+    </div>
+
+    <div class="menu-item">
+      <img src="imgg/smoothie.jpg" alt="pudding">
+      <h3>smoothie</h3>
+      <p>Smoothies are a great way to make use of leftover fresh fruit or to sneak in some extra superfoods that you wouldn't normally eat on their own</p>
+      <button onclick="showOrderForm('smoothie')">Order Now</button>
+      <p class="price">$9.24</p>
+    </div>
+    
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="gallery-section">
+    <h1>Delicious Creations</h1>
+    <div class="gallery">
+      <img src="imgg/dessert1.jpg" alt="Dessert Gallery 1">
+      <img src="imgg/dessert2.jpg" alt="Dessert Gallery 2">
+      <img src="imgg/dessert3.jpg" alt="Dessert Gallery 2">
+      <img src="imgg/dessert5.jpg" alt="Dessert Gallery 2">
+      <img src="imgg/dessert6.jpg" alt="Dessert Gallery 2">
+      <img src="imgg/dessert7.jpg" alt="Dessert Gallery 2">
+      <img src="imgg/dessert8.jpg" alt="Dessert Gallery 2">
+      <img src="imgg/dessert9.jpg" alt="Dessert Gallery 2">
+      <img src="imgg/2.jpg" alt="Dessert Gallery 1">
+      <img src="imgg/3.jpg" alt="Dessert Gallery 1">
+      <img src="imgg/5.jpg" alt="Dessert Gallery 1">
+      <img src="imgg/8.jpg" alt="Dessert Gallery 1">
+    </div>
+  </section>
+
+  <!-- Reviews/Testimonials Section -->
+  <section id="reviews" class="reviews-section">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial">
+      <p>"The desserts here are amazing! Highly recommend the chocolate cake!"</p>
+      <p class="author">- Happy Customer</p>
+      <p>"just love the donut its so yummy"</p>
+      <p class="author">- ami jackson</p>
+    </div>
+  </section>
+
+  <!-- Newsletter Subscription -->
+  <section id="newsletter" class="newsletter-section">
+    <h2>Subscribe to Our Newsletter</h2>
+    <p>Stay updated with our latest desserts and promotions.</p>
+    <form action="subscribe_process.php" method="post">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <!-- Online Ordering Section (Placeholder) -->
+  <section id="order-online" class="order-online-section">
+    <h2>Order Online</h2>
+    <p>Explore our menu and place your order online for delivery or pickup.</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <h2>Contact Us</h2>
+    <p>For inquiries or reservations, please contact us:</p>
+    <p>Email: amrapaligangurde2001@gmail.com</p>
+    <p>Phone: +917796896201</p>
+  </section>
+
+  <!-- Order Form (Initially Hidden) -->
+  <div id="order-form"

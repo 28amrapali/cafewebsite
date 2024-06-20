@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Registration Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <form id="registrationForm" class="form" novalidate>
+      <h2>Register</h2>
+      <div class="form-control">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter username" required>
+        <small>Error message</small>
+      </div>
+      <div class="form-control">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter email" required>
+        <small>Error message</small>
+      </div>
+      <div class="form-control">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter password" required>
+        <small>Error message</small>
+      </div>
+      <div class="form-control">
+        <label for="password2">Confirm Password</label>
+        <input type="password" id="password2" name="password2" placeholder="Confirm password" required>
+        <small>Error message</small>
+      </div>
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('registrationForm');
+    const username = document.getElementById('username');
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
+    const password2 = document.getElementById('password2');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      checkInputs();
+    });
+
+    function checkInputs() {
+      // trim to remove the whitespaces
+      const usernameValue = username.value.trim();
+      const emailValue = email.value.trim();
+      const passwordValue = password.value.trim();
+      const password2Value = password2.value.trim();
+      
+      if(usernameValue === '') {
+        setErrorFor(username, 'Username cannot be blank');
+      } else {
+        setSuccessFor(username);
+      }
+      
+      if(emailValue === '') {
+        setErrorFor(email, 'Email cannot be blank');
+      } else if (!isEmail(emailValue)) {
+        setErrorFor(email, 'Not a valid email');
+      } else {
+        setSuccessFor(email);
+      }
+      
+      if(passwordValue === '') {
+        setErrorFor(password, 'Password cannot be blank');
+      } else {
+        setSuccessFor(password);
+      }
+      
+      if(password2Value === '') {
+        setErrorFor(password2, 'Password2 cannot be blank');
+      } else if(passwordValue !== password2Value) {
+        setErrorFor(password2, 'Passwords does not match');
+      } else{
+        setSuccessFor(password2);
+      }
+      
+    }
+
+    function setErrorFor(input, message) {
+      const formControl = input.parentElement;
+      const small = formControl.querySelector('small');
+      formControl.className = 'form-control error';
+      small.innerText = message;
+      small.style.display = 'block';
+    }
+
+    function setSuccessFor(input) {
+      const formControl = input.parentElement;
+      const small = formControl.querySelector('small');
+      formControl.className = 'form-control success';
+      small.style.display = 'none';
+    }
+
+    function isEmail(email) {
+      return /^([a-zA-Z0-9_\.\-])+\@([a-zA-Z0-9\-])+\.[a-zA-Z]{2,6}$/.test(email);
+    }
+  </script>
+</body>
+</html>
